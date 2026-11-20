@@ -1,0 +1,1097 @@
+
+/* =========================================
+   01. GLOBAL VARIABLES & RESET
+========================================= */
+
+:root {
+  --bg: #050b16;
+  --panel: #0b1527;
+  --line: #1d304e;
+  --lime: #a6ff0b;
+  --text: #ffffff;
+  --muted: #b4c7e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 105px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(100% - 9%, 1440px);
+  margin: auto;
+}
+
+/* =========================================
+   02. HEADER & NAVIGATION
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(5, 11, 22, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #152238;
+}
+
+.nav {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font: 800 32px/1 'Barlow Condensed', Impact, sans-serif;
+  white-space: nowrap;
+}
+
+.logo span,
+.eyebrow {
+  color: var(--lime);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+nav > a {
+  color: #d7e4fb;
+  font-size: 16px;
+}
+
+nav > a:hover,
+footer a:hover {
+  color: var(--lime);
+}
+
+/* =========================================
+   03. BUTTONS
+========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  padding: 19px 28px;
+  font-weight: 700;
+  font-size: 17px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-lime {
+  background: var(--lime);
+  color: #050b16;
+}
+
+.btn-lime:hover {
+  background: #c0ff4d;
+  color: #050b16;
+}
+
+.btn-outline {
+  border-color: #496286;
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--lime);
+}
+
+.btn.small {
+  padding: 15px 22px;
+  font-size: 15px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* =========================================
+   04. HERO SECTION
+========================================= */
+
+.hero {
+  min-height: 750px;
+  padding-top: 80px;
+  padding-bottom: 75px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid #2e4c08;
+  border-radius: 30px;
+  background: #0d1b0b;
+  padding: 11px 16px;
+}
+
+.hero h1,
+h2,
+h3,
+h4 {
+  font-family: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.hero h1 {
+  font-size: clamp(64px, 6.7vw, 118px);
+  line-height: 0.9;
+  margin: 28px 0;
+  white-space: nowrap;
+}
+
+.hero h1 em {
+  color: var(--lime);
+  font-style: normal;
+}
+
+.hero-copy > p:not(.fineprint) {
+  max-width: 610px;
+  color: #c5d7f3;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 34px 0 20px;
+}
+
+.fineprint {
+  font-size: 13px;
+  color: #8fa8c9;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Hero image */
+
+.hero-art {
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(
+    ellipse at 50% 65%,
+    #114c35,
+    #06101a 63%,
+    #050b16 83%
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-art-title {
+  position: absolute;
+  top: 28px;
+  left: 5%;
+  right: 5%;
+
+  font: 900 clamp(38px, 4vw, 72px)/0.95
+    'Barlow Condensed', sans-serif;
+
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-art-title span {
+  color: var(--lime);
+}
+
+.hero-art img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: center bottom;
+
+  mask-image: linear-gradient(
+    transparent 0%,
+    black 22%
+  );
+}
+
+.hero-art-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--lime);
+  color: #07101b;
+
+  font: 900 38px 'Barlow Condensed', sans-serif;
+  padding: 17px 26px;
+  border-radius: 0 18px 0 0;
+}
+
+/* =========================================
+   05. MARKET STATS
+========================================= */
+
+.statbar {
+  border-top: 1px solid #1a2940;
+  border-bottom: 1px solid #1a2940;
+  background: #0a1222;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  padding: 40px 0;
+}
+
+.stats strong {
+  display: block;
+  color: var(--lime);
+
+  font: 900 clamp(48px, 5vw, 80px)/1
+    'Barlow Condensed', sans-serif;
+}
+
+.stats span {
+  display: block;
+  color: #a9bfdf;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+/* =========================================
+   06. GENERAL SECTIONS
+========================================= */
+
+.section {
+  padding-top: 105px;
+  padding-bottom: 30px;
+}
+
+.section h2,
+.cta h2 {
+  font-size: clamp(50px, 5vw, 84px);
+  line-height: 1.02;
+  margin: 14px 0 30px;
+}
+
+.section-desc {
+  max-width: 980px;
+  color: #c5d7f3;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.two-grid,
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 23px;
+  padding: 35px;
+}
+
+.kicker {
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #8da6cb;
+}
+
+.panel h3 {
+  font-size: clamp(32px, 3vw, 51px);
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
+.panel p,
+.aud-panel p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #c6d7f1;
+}
+
+/* =========================================
+   07. BITCOIN & SOLANA CARD ANIMATIONS
+========================================= */
+
+/*
+  Reveal animation is applied to .outlook-reveal.
+  Hover animation is applied to .crypto-hover-card.
+  This prevents transform conflicts.
+*/
+
+#outlook .outlook-reveal {
+  min-width: 0;
+  height: 100%;
+}
+
+/* Main animated card */
+
+#outlook .crypto-hover-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 100%;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Soft neon green glow */
+
+#outlook .crypto-hover-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(166, 255, 11, 0.14),
+    transparent 70%
+  );
+
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+/* Keep text above glow */
+
+#outlook .crypto-hover-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Premium hover animation */
+
+#outlook .crypto-hover-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(166, 255, 11, 0.5);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(166, 255, 11, 0.1);
+}
+
+/* Glow visible on hover */
+
+#outlook .crypto-hover-card:hover::before {
+  opacity: 1;
+}
+
+/* Clickable text */
+
+#outlook .crypto-card-link {
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Heading turns lime on hover */
+
+#outlook h3 .crypto-card-link:hover {
+  color: var(--lime);
+}
+
+/* Paragraph hover */
+
+#outlook p .crypto-card-link:hover {
+  opacity: 0.8;
+}
+
+/* Keyboard accessibility */
+
+#outlook .crypto-card-link:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* =========================================
+   08. HISTORICAL WATCHLIST TABLE
+========================================= */
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--panel);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 790px;
+  text-align: left;
+}
+
+th {
+  color: #8fa9cf;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  padding: 28px 24px;
+}
+
+td {
+  padding: 25px 24px;
+  border-top: 1px solid #1b2c45;
+  font-size: 16px;
+}
+
+td:first-child {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+td small {
+  display: block;
+  color: #91a9cb;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.pending {
+  color: #8298b8;
+}
+
+.data-note {
+  color: #90a8ca;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.notes {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 38px;
+}
+
+.notes p {
+  border-left: 3px solid var(--lime);
+  padding-left: 20px;
+  color: #c5d7f3;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.notes b {
+  color: #ffffff;
+}
+
+/* =========================================
+   09. MARKET SCENARIOS
+========================================= */
+
+.scenario-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.scenario-tabs button {
+  border: 1px solid #375073;
+  background: #0b1527;
+  color: #dce9fa;
+  border-radius: 12px;
+  padding: 16px 22px;
+  font-weight: 700;
+}
+
+.scenario-tabs button.active {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #050b16;
+}
+
+.scenario-result {
+  max-width: 900px;
+  min-height: 220px;
+}
+
+/* =========================================
+   10. USD TO AUD CONVERTER
+========================================= */
+
+.aud-panel {
+  border: 1px solid #28471e;
+  border-radius: 30px;
+
+  background: linear-gradient(
+    120deg,
+    #0b2018,
+    #0b1527 68%
+  );
+
+  padding: 55px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.aud-panel h2 {
+  margin-top: 18px;
+}
+
+.converter {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #050b16;
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.converter label {
+  margin: 26px 0 12px;
+  color: #c6d7f1;
+}
+
+.converter input,
+.modal input {
+  background: #0b1527;
+  color: #ffffff;
+  border: 1px solid #496286;
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+  outline: none;
+}
+
+.converter input:focus,
+.modal input:focus {
+  border-color: var(--lime);
+}
+
+.converter .muted {
+  margin-top: 28px;
+}
+
+.converter output {
+  font: 900 65px/1.2
+    'Barlow Condensed', sans-serif;
+
+  color: var(--lime);
+  overflow-wrap: anywhere;
+}
+
+.converter small {
+  color: #8fa8c9;
+  line-height: 1.7;
+}
+
+/* =========================================
+   11. CRYPTO KNOWLEDGE CARDS
+========================================= */
+
+.four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.learn-card {
+  padding: 27px;
+}
+
+.learn-card strong {
+  color: var(--lime);
+  font: 900 53px 'Barlow Condensed', sans-serif;
+}
+
+.learn-card h4 {
+  font-size: 29px;
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
+.learn-card p {
+  font-size: 15px;
+}
+
+/* =========================================
+   12. FINAL CTA SECTION
+========================================= */
+
+.cta-wrap {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.cta {
+  border-radius: 30px;
+  background: var(--lime);
+  color: #050b16;
+  padding: 50px 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta h2 {
+  margin: 0;
+}
+
+.cta p {
+  font-size: 19px;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+.cta .actions {
+  flex-shrink: 0;
+}
+
+.btn-dark {
+  background: #050b16;
+  color: var(--lime);
+}
+
+.btn-dark-outline {
+  background: transparent;
+  border: 2px solid #050b16;
+  color: #050b16;
+}
+
+/* =========================================
+   13. FOOTER
+========================================= */
+
+footer {
+  border-top: 1px solid #1a2940;
+  padding: 60px 0 85px;
+}
+
+footer .container {
+  max-width: 1280px;
+}
+
+footer p {
+  color: #a9bfdf;
+  line-height: 1.7;
+  max-width: 1200px;
+}
+
+footer b {
+  color: #ffffff;
+}
+
+footer p a {
+  color: var(--lime);
+  text-decoration: underline;
+}
+
+.muted {
+  color: #8fa8c9;
+}
+
+/* =========================================
+   14. LEGACY REGISTRATION MODAL
+========================================= */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  z-index: 50;
+
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  width: min(100%, 470px);
+  background: #0b1527;
+  border: 1px solid #314a6b;
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 30px 80px #0009;
+}
+
+.modal h3 {
+  font-size: 48px;
+  margin: 8px 0;
+}
+
+.modal p {
+  color: #bfd0e9;
+}
+
+.modal form {
+  display: grid;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.modal form label {
+  font-size: 14px;
+}
+
+.modal form .btn {
+  margin-top: 12px;
+}
+
+.modal small {
+  color: #8299b9;
+}
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.form-status {
+  font-size: 14px;
+}
+
+/* =========================================
+   15. SCROLL REVEAL ANIMATIONS
+========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================
+   16. TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .container {
+    width: min(100% - 6%, 1440px);
+  }
+
+  .hero {
+    gap: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(55px, 6.2vw, 90px);
+  }
+
+  .hero-art {
+    min-height: 500px;
+  }
+
+  .four-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aud-panel {
+    gap: 30px;
+    padding: 35px;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+/* =========================================
+   17. MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 760px) {
+
+  .nav {
+    min-height: 74px;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  /* Mobile menu button */
+  .menu-btn {
+    display: block;
+    background: none;
+    border: 1px solid #3b5274;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 8px 13px;
+    font-size: 22px;
+  }
+
+  /* Mobile navigation */
+  nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 74px;
+    padding: 20px 5%;
+    background: #081120;
+    border-bottom: 1px solid #263a56;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav .btn {
+    width: 100%;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 45px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(51px, 10vw, 82px);
+  }
+
+  .hero-copy > p:not(.fineprint) {
+    font-size: 17px;
+  }
+
+  .hero-art {
+    min-height: 440px;
+  }
+
+  .hero-art-title {
+    font-size: clamp(40px, 8vw, 65px);
+  }
+
+  /* Stats */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Sections */
+  .section {
+    padding-top: 75px;
+  }
+
+  .section h2,
+  .cta h2 {
+    font-size: clamp(44px, 9vw, 68px);
+  }
+
+  .two-grid,
+  .notes,
+  .aud-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 25px;
+  }
+
+  .panel p,
+  .aud-panel p {
+    font-size: 16px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+  }
+
+  .aud-panel {
+    padding: 24px;
+  }
+
+  .converter {
+    padding: 25px;
+  }
+
+  .cta {
+    padding: 35px 25px;
+  }
+
+  .cta p {
+    font-size: 16px;
+  }
+
+  /* Reduce card movement on mobile */
+  #outlook .crypto-hover-card:hover {
+    transform: translateY(-4px);
+  }
+
+}
+
+/* =========================================
+   18. SMALL MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 470px) {
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 11vw, 60px);
+  }
+
+  .hero-art {
+    min-height: 340px;
+  }
+
+  .hero-art-tag {
+    font-size: 26px;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .stats strong {
+    font-size: 49px;
+  }
+
+  .stats span {
+    font-size: 13px;
+  }
+
+  .four-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+  .cta .actions {
+    width: 100%;
+  }
+
+  .section h2,
+  .cta h2 {
+    font-size: 46px;
+  }
+
+  .converter output {
+    font-size: 52px;
+  }
+
+}
+
+/* =========================================
+   19. REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn,
+  #outlook .crypto-hover-card,
+  #outlook .crypto-hover-card::before,
+  #outlook .crypto-card-link {
+    transition: none;
+    animation: none;
+  }
+
+  #outlook .crypto-hover-card:hover {
+    transform: none;
+  }
+
+}
