@@ -1,20 +1,37 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-AU">
 
 <head>
-  <!-- =========================================
-       01. BASIC PAGE SETTINGS
-  ========================================== -->
+  <!-- GOOGLE TAG MANAGER -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MQRD6TSL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+  </script>
+
+  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+  <meta
+    name="google-site-verification"
+    content="etzLE84UIt632FhLui0uDLSdXiwX1nW1mUccHVSSouU"
+  />
+
+  <!-- BASIC META TAGS -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050b16">
+
+  <meta
+    name="description"
+    content="Crypto Brief AU: Explore historical November returns for Bitcoin, Ethereum, Solana and XRP, market scenarios and an AUD converter."
+  >
 
   <title>Crypto Brief AU | November 2026 Watchlist</title>
 
-  <!-- =========================================
-       02. GOOGLE FONTS
-  ========================================== -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -23,52 +40,37 @@
     rel="stylesheet"
   >
 
-  <!-- =========================================
-       03. MAIN CSS
-  ========================================== -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="./styles.css">
 
-  <!-- =========================================
-       04. META PIXEL CODE
-       Pixel ID: 1792635325352788
-
-       Tracks PageView when the page loads.
-       Ensure consent requirements are met.
-  ========================================== -->
-
-  <!-- Meta Pixel Code -->
+  <!-- META PIXEL -->
+  <!-- Configure tracking consent as required. -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {
+    !function(f,b,e,v,n,t,s) {
       if(f.fbq)return;
-
-      n=f.fbq=function(){
-        n.callMethod ?
-        n.callMethod.apply(n,arguments) :
-        n.queue.push(arguments)
+      n=f.fbq=function() {
+        n.callMethod
+          ? n.callMethod.apply(n,arguments)
+          : n.queue.push(arguments);
       };
-
       if(!f._fbq)f._fbq=n;
-
       n.push=n;
       n.loaded=!0;
       n.version='2.0';
       n.queue=[];
-
       t=b.createElement(e);
       t.async=!0;
       t.src=v;
-
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s);
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
 
-    }(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-
-    // Initialize Meta Pixel
     fbq('init', '1792635325352788');
-
-    // Track page views
     fbq('track', 'PageView');
   </script>
 
@@ -81,29 +83,27 @@
       alt=""
     >
   </noscript>
-  <!-- End Meta Pixel Code -->
 
 </head>
 
 <body>
 
   <!-- =========================================
-       05. HEADER / NAVIGATION
+       HEADER / NAVBAR
   ========================================== -->
+
   <header class="site-header">
 
     <div class="container nav">
 
-      <!-- Website Logo -->
-      <a class="logo" href="#home">
+      <a href="#home" class="logo">
         CRYPTO BRIEF <span>AU</span>
       </a>
 
-      <!-- Mobile Navigation Button -->
       <button
-        class="menu-btn"
-        id="menuBtn"
         type="button"
+        id="menuBtn"
+        class="menu-btn"
         aria-label="Toggle navigation"
         aria-controls="mainNav"
         aria-expanded="false"
@@ -111,16 +111,13 @@
         ☰
       </button>
 
-      <!-- Main Navigation -->
       <nav id="mainNav" aria-label="Main navigation">
 
-        <!-- Internal Navigation Links -->
         <a href="#outlook">Outlook</a>
         <a href="#history">History</a>
         <a href="#scenarios">Scenarios</a>
         <a href="#learn">Learn</a>
 
-        <!-- Log In: DoshX Buy Crypto -->
         <a
           href="https://doshx.com/en/buy-crypto"
           target="_blank"
@@ -130,7 +127,6 @@
           Log In
         </a>
 
-        <!-- Register: DoshX Registration -->
         <a
           href="https://doshx.com/en/register?continue=L2VuL2J1eS1jcnlwdG8%3D"
           target="_blank"
@@ -146,17 +142,14 @@
 
   </header>
 
-  <!-- =========================================
-       MAIN WEBSITE CONTENT
-  ========================================== -->
   <main id="home">
 
-    <!-- =======================================
-         06. HERO SECTION
-    ======================================== -->
+    <!-- =========================================
+         HERO SECTION
+    ========================================== -->
+
     <section class="hero container">
 
-      <!-- Hero Left Content -->
       <div class="hero-copy reveal">
 
         <div class="eyebrow pill">
@@ -170,16 +163,15 @@
         </h1>
 
         <p>
-          Bitcoin, Ethereum, Solana and XRP were all down in
-          November at the time of writing. See what the last
-          four Novembers show, which scenarios to watch, and
-          what Australians should check in AUD.
+          Bitcoin, Ethereum, Solana and XRP were all down
+          in November at the time of writing. See what
+          the last four Novembers show, which scenarios
+          to watch, and what Australians should check
+          in AUD.
         </p>
 
-        <!-- Hero Buttons -->
         <div class="actions">
 
-          <!-- Register Free Button -->
           <a
             href="https://doshx.com/en/register?continue=L2VuL2J1eS1jcnlwdG8%3D"
             target="_blank"
@@ -189,9 +181,10 @@
             Register free →
           </a>
 
-          <!-- Scroll to Watchlist -->
           <a
             href="https://www.linkedin.com/pulse/november-2026-crypto-watchlist-australia-cryptobrief-wc1kc"
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn btn-outline"
           >
             View the watchlist
@@ -199,24 +192,19 @@
 
         </div>
 
-        <!-- Crypto Risk Disclaimer -->
         <p class="fineprint">
           General information only, not financial advice.
-          Crypto assets are highly volatile and you could
-          lose some or all of the money you invest.
+          Crypto assets are highly volatile and you
+          could lose some or all of the money you invest.
         </p>
 
       </div>
 
-      <!-- Hero Right Image -->
       <div class="hero-art reveal">
 
-        <!--
-          Keep crp.jpg in the same folder as index.html.
-        -->
         <img
           src="./crp.jpg"
-          alt="Bitcoin, Ethereum, Solana and XRP coins with green candlestick graphics"
+          alt="Cryptocurrency coins and market chart"
           loading="eager"
           decoding="async"
         >
@@ -225,14 +213,14 @@
 
     </section>
 
-    <!-- =======================================
-         07. MARKET STATISTICS
-    ======================================== -->
+    <!-- =========================================
+         MARKET STATISTICS
+    ========================================== -->
+
     <section class="statbar">
 
       <div class="container stats">
 
-        <!-- Completed Novembers -->
         <div class="reveal">
           <strong>4</strong>
           <span>
@@ -240,23 +228,20 @@
           </span>
         </div>
 
-        <!-- XRP Best Performance -->
         <div class="reveal">
           <strong>+283%</strong>
           <span>
-            XRP’s best single November (2024)
+            XRP's best single November (2024)
           </span>
         </div>
 
-        <!-- Solana Worst Performance -->
         <div class="reveal">
-          <strong>-56.5%</strong>
+          <strong>−56.5%</strong>
           <span>
-            Solana’s worst single November (2022)
+            Solana's worst single November (2022)
           </span>
         </div>
 
-        <!-- AUD/USD Exchange Rate -->
         <div class="reveal">
           <strong>0.6677</strong>
           <span>
@@ -268,14 +253,11 @@
 
     </section>
 
-    <!-- =======================================
-         08. MARKET OUTLOOK
-         Animated Bitcoin & Solana Cards
-    ======================================== -->
-    <section
-      class="section container"
-      id="outlook"
-    >
+    <!-- =========================================
+         MARKET OUTLOOK
+    ========================================== -->
+
+    <section class="section container" id="outlook">
 
       <p class="eyebrow">
         WHERE THINGS STAND
@@ -287,10 +269,7 @@
 
       <div class="two-grid">
 
-        <!-- =====================================
-             BITCOIN CARD
-             Reveal + Hover Animation
-        ====================================== -->
+        <!-- BITCOIN CARD -->
         <div class="reveal outlook-reveal">
 
           <article class="panel crypto-hover-card">
@@ -299,29 +278,27 @@
               MONTH-TO-DATE
             </span>
 
-            <!-- Clickable Bitcoin Heading -->
             <h3>
               <a
-                class="crypto-card-link"
                 href="https://doshx.com/en/buy-crypto"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="crypto-card-link"
               >
                 BITCOIN IS HOLDING UP BEST
               </a>
             </h3>
 
-            <!-- Clickable Bitcoin Description -->
             <p>
               <a
-                class="crypto-card-link"
                 href="https://doshx.com/en/buy-crypto"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="crypto-card-link"
               >
-                All four coins were lower for November at the
-                time of writing, but Bitcoin had lost the least
-                of the group.
+                All four coins were lower for November
+                at the time of writing, but Bitcoin
+                had lost the least of the group.
               </a>
             </p>
 
@@ -329,10 +306,7 @@
 
         </div>
 
-        <!-- =====================================
-             SOLANA CARD
-             Reveal + Hover Animation
-        ====================================== -->
+        <!-- SOLANA CARD -->
         <div class="reveal outlook-reveal">
 
           <article class="panel crypto-hover-card">
@@ -341,29 +315,27 @@
               HISTORICAL MEDIAN
             </span>
 
-            <!-- Clickable Solana Heading -->
             <h3>
               <a
-                class="crypto-card-link"
                 href="https://doshx.com/en/buy-crypto"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="crypto-card-link"
               >
                 SOLANA HAS THE STRONGEST MEDIAN
               </a>
             </h3>
 
-            <!-- Clickable Solana Description -->
             <p>
               <a
-                class="crypto-card-link"
                 href="https://doshx.com/en/buy-crypto"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="crypto-card-link"
               >
-                Across the previous four Novembers, Solana had
-                the highest median return, and the widest swings
-                in both directions.
+                Across the previous four Novembers,
+                Solana had the highest median return,
+                and the widest swings in both directions.
               </a>
             </p>
 
@@ -375,13 +347,11 @@
 
     </section>
 
-    <!-- =======================================
-         09. HISTORICAL CRYPTO WATCHLIST
-    ======================================== -->
-    <section
-      class="section container"
-      id="history"
-    >
+    <!-- =========================================
+         HISTORICAL WATCHLIST
+    ========================================== -->
+
+    <section class="section container" id="history">
 
       <p class="eyebrow">
         THE WATCHLIST
@@ -393,16 +363,20 @@
 
       <p class="section-desc">
         Same four completed Novembers, same four coins.
-        Returns are rounded and based on Binance spot prices
-        quoted in USDT, excluding fees. The median is the
-        midpoint of the four results, which shows how one
-        exceptional month can distort the picture.
+        Returns are rounded and based on Binance spot
+        prices quoted in USDT, excluding fees. The median
+        is the midpoint of the four results, which shows
+        how one exceptional month can distort the picture.
       </p>
 
-      <!-- Historical Data Table -->
-      <div class="table-scroll reveal">
+      <!--
+        Historical rows are generated by script.js
+        using the exact values from your screenshot.
+      -->
 
-        <table>
+      <div class="table-scroll reveal history-table">
+
+        <table class="crypto-history-table">
 
           <thead>
             <tr>
@@ -415,53 +389,96 @@
             </tr>
           </thead>
 
-          <!-- Table rows generated by script.js -->
-          <tbody id="watchlistBody"></tbody>
+          <tbody id="watchlistBody">
+
+            <!-- Fallback data if JavaScript is disabled -->
+
+            <tr>
+              <td class="crypto-name">
+                <strong>Bitcoin</strong>
+                <small>BTC</small>
+              </td>
+              <td><span class="return-box negative">−16.2%</span></td>
+              <td><span class="return-box positive-low">+8.8%</span></td>
+              <td><span class="return-box positive">+37.3%</span></td>
+              <td><span class="return-box negative">−17.5%</span></td>
+              <td><span class="return-box median-negative">−3.7%</span></td>
+            </tr>
+
+            <tr>
+              <td class="crypto-name">
+                <strong>Ethereum</strong>
+                <small>ETH</small>
+              </td>
+              <td><span class="return-box negative">−17.7%</span></td>
+              <td><span class="return-box positive-low">+13.1%</span></td>
+              <td><span class="return-box positive">+47%</span></td>
+              <td><span class="return-box negative">−22.3%</span></td>
+              <td><span class="return-box median-negative">−2.3%</span></td>
+            </tr>
+
+            <tr>
+              <td class="crypto-name">
+                <strong>Solana</strong>
+                <small>SOL</small>
+              </td>
+              <td><span class="return-box negative-strong">−56.5%</span></td>
+              <td><span class="return-box positive-strong">+54.4%</span></td>
+              <td><span class="return-box positive">+40.9%</span></td>
+              <td><span class="return-box negative">−28.7%</span></td>
+              <td><span class="return-box median-positive">+6.1%</span></td>
+            </tr>
+
+            <tr>
+              <td class="crypto-name">
+                <strong>XRP</strong>
+                <small>XRP</small>
+              </td>
+              <td><span class="return-box negative">−12.1%</span></td>
+              <td><span class="return-box positive-low">+1.1%</span></td>
+              <td><span class="return-box positive-strong">+283%</span></td>
+              <td><span class="return-box negative">−14.1%</span></td>
+              <td><span class="return-box median-negative">−5.5%</span></td>
+            </tr>
+
+          </tbody>
 
         </table>
 
       </div>
 
-      <!-- Data Availability Note -->
-      <p class="data-note">
-        The original screenshot shows unrendered template
-        fields rather than the underlying numerical returns.
-        Historical cells are marked “Data pending” until
-        verified figures are supplied.
-      </p>
+      <!-- HISTORICAL INSIGHTS -->
 
-      <!-- Historical Market Insights -->
       <div class="three-grid notes">
 
         <p>
           <b>Same direction, every time.</b>
-          All four rose in November 2023 and 2024, and all
-          four fell in November 2022 and 2025.
+          All four rose in November 2023 and 2024,
+          and all four fell in November 2022 and 2025.
         </p>
 
         <p>
           <b>The winner changed each year.</b>
-          Solana led in 2023, while XRP’s roughly 283% surge
-          put it far ahead in 2024.
+          Solana led in 2023, while XRP's roughly
+          283% surge put it far ahead in 2024.
         </p>
 
         <p>
-          <b>Four data points aren’t odds.</b>
-          That is too few to estimate reliable odds for
-          November 2026, and XRP still had the lowest median.
+          <b>Four data points aren't odds.</b>
+          That is too few to estimate reliable odds
+          for November 2026, and XRP still had
+          the lowest median.
         </p>
 
       </div>
 
     </section>
 
-    <!-- =======================================
-         10. INTERACTIVE MARKET SCENARIOS
-    ======================================== -->
-    <section
-      class="section container"
-      id="scenarios"
-    >
+    <!-- =========================================
+         MARKET SCENARIOS
+    ========================================== -->
+
+    <section class="section container" id="scenarios">
 
       <p class="eyebrow">
         MONTH-END SCENARIOS
@@ -472,20 +489,18 @@
       </h2>
 
       <p class="section-desc">
-        Pick a market scenario to see which coin the data
-        says to watch. These use historical returns and
-        November’s performance to date. They carry no
-        assigned probabilities or price targets.
+        Pick a market scenario to see which coin the
+        data says to watch. These use historical returns
+        and November's performance to date. They carry
+        no assigned probabilities or price targets.
       </p>
 
-      <!-- Scenario Selection Tabs -->
       <div
         class="scenario-tabs"
         role="tablist"
         aria-label="Market scenarios"
       >
 
-        <!-- Market Rebounds -->
         <button
           type="button"
           class="active"
@@ -497,7 +512,6 @@
           Market rebounds
         </button>
 
-        <!-- Market Stays Weak -->
         <button
           type="button"
           data-scenario="soft"
@@ -508,7 +522,6 @@
           Market stays weak
         </button>
 
-        <!-- Volatility Rises -->
         <button
           type="button"
           data-scenario="volatile"
@@ -521,46 +534,39 @@
 
       </div>
 
-      <!-- Dynamic Scenario Content -->
       <article
         class="panel scenario-result reveal"
         id="scenarioResult"
         aria-live="polite"
       >
 
-        <span
-          class="kicker"
-          id="scenarioKicker"
-        >
+        <span class="kicker" id="scenarioKicker">
           SCENARIO 01 · REBOUND
         </span>
 
         <h3 id="scenarioTitle">
-          WATCH SOLANA’S HISTORICAL STRENGTH
+          WATCH SOLANA'S HISTORICAL STRENGTH
         </h3>
 
         <p id="scenarioText">
-          Solana has the strongest median across the four
-          completed Novembers, but that does not guarantee
-          a rebound. Compare price action and risk before
-          drawing conclusions.
+          Solana has the strongest median across the
+          four completed Novembers, but that does not
+          guarantee a rebound. Compare price action
+          and risk before drawing conclusions.
         </p>
 
       </article>
 
     </section>
 
-    <!-- =======================================
-         11. USD TO AUD CONVERTER
-    ======================================== -->
-    <section
-      class="section container"
-      id="aud"
-    >
+    <!-- =========================================
+         AUD CONVERTER
+    ========================================== -->
+
+    <section class="section container" id="aud">
 
       <div class="aud-panel">
 
-        <!-- AUD Market Information -->
         <div>
 
           <p class="eyebrow">
@@ -575,8 +581,8 @@
             The figure that matters is your return in
             Australian dollars after fees and spreads.
             A weaker Australian dollar can cushion a
-            USD-denominated loss in AUD terms, while a
-            stronger one can reduce a USD-denominated gain.
+            USD-denominated loss in AUD terms, while
+            a stronger one can reduce a USD-denominated gain.
           </p>
 
           <p>
@@ -588,7 +594,6 @@
 
         </div>
 
-        <!-- USD to AUD Converter -->
         <div class="converter">
 
           <span class="kicker">
@@ -599,7 +604,6 @@
             Amount in USD
           </label>
 
-          <!-- USD Input -->
           <input
             id="usd"
             type="number"
@@ -613,7 +617,6 @@
             Equals about
           </span>
 
-          <!-- Updated by script.js -->
           <output id="audOutput" for="usd">
             A$0.00
           </output>
@@ -630,13 +633,11 @@
 
     </section>
 
-    <!-- =======================================
-         12. CRYPTO KNOWLEDGE SECTION
-    ======================================== -->
-    <section
-      class="section container"
-      id="learn"
-    >
+    <!-- =========================================
+         CRYPTO KNOWLEDGE
+    ========================================== -->
+
+    <section class="section container" id="learn">
 
       <p class="eyebrow">
         CRYPTO KNOWLEDGE
@@ -648,7 +649,6 @@
 
       <div class="four-grid">
 
-        <!-- Knowledge Card 1 -->
         <article class="panel learn-card reveal">
 
           <strong>01</strong>
@@ -664,7 +664,6 @@
 
         </article>
 
-        <!-- Knowledge Card 2 -->
         <article class="panel learn-card reveal">
 
           <strong>02</strong>
@@ -680,7 +679,6 @@
 
         </article>
 
-        <!-- Knowledge Card 3 -->
         <article class="panel learn-card reveal">
 
           <strong>03</strong>
@@ -696,7 +694,6 @@
 
         </article>
 
-        <!-- Knowledge Card 4 -->
         <article class="panel learn-card reveal">
 
           <strong>04</strong>
@@ -716,14 +713,14 @@
 
     </section>
 
-    <!-- =======================================
-         13. FINAL CALL TO ACTION
-    ======================================== -->
+    <!-- =========================================
+         FINAL CTA
+    ========================================== -->
+
     <section class="container cta-wrap">
 
       <div class="cta reveal">
 
-        <!-- CTA Text -->
         <div>
 
           <h2>
@@ -738,10 +735,8 @@
 
         </div>
 
-        <!-- CTA Buttons -->
         <div class="actions">
 
-          <!-- Buy Now: DoshX Buy Crypto -->
           <a
             href="https://doshx.com/en/buy-crypto"
             target="_blank"
@@ -751,7 +746,6 @@
             Buy Now →
           </a>
 
-          <!-- Sign Up: DoshX Registration -->
           <a
             href="https://doshx.com/en/register?continue=L2VuL2J1eS1jcnlwdG8%3D"
             target="_blank"
@@ -770,18 +764,17 @@
   </main>
 
   <!-- =========================================
-       14. FOOTER
+       FOOTER
   ========================================== -->
+
   <footer>
 
     <div class="container">
 
-      <!-- Footer Logo -->
       <a class="logo" href="#home">
         CRYPTO BRIEF <span>AU</span>
       </a>
 
-      <!-- Financial Risk Disclaimer -->
       <p>
         <b>Forecast and risk note.</b>
         This page provides a scenario-based outlook
@@ -803,12 +796,11 @@
         </a>.
       </p>
 
-      <!-- Data Source Details -->
       <p class="muted">
         Data: historical November returns based on
         Binance spot prices quoted in USDT, excluding
-        fees, rounded. Exchange rate: Reserve Bank of
-        Australia, AUD/USD 0.6677 on 19 November 2026.
+        fees, rounded. Exchange rate: Reserve Bank
+        of Australia, AUD/USD 0.6677 on 19 November 2026.
         Market outlook as at 20 November 2026.
       </p>
 
@@ -817,104 +809,10 @@
   </footer>
 
   <!-- =========================================
-       15. LEGACY REGISTRATION MODAL
-
-       Currently unused by DoshX external links.
-       Kept for compatibility with existing JS.
+       MAIN JAVASCRIPT
   ========================================== -->
-  <div
-    class="modal-backdrop"
-    id="modalBackdrop"
-    hidden
-  >
 
-    <div
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modalTitle"
-    >
-
-      <!-- Modal Close Button -->
-      <button
-        class="modal-close"
-        id="modalClose"
-        type="button"
-        aria-label="Close"
-      >
-        ×
-      </button>
-
-      <p class="eyebrow">
-        CRYPTO BRIEF AU
-      </p>
-
-      <h3 id="modalTitle">
-        Register free
-      </h3>
-
-      <p>
-        Join the watchlist updates.
-      </p>
-
-      <!-- Demo Registration Form -->
-      <form id="signupForm">
-
-        <label for="fullName">
-          Full name
-        </label>
-
-        <input
-          id="fullName"
-          required
-          minlength="2"
-          autocomplete="name"
-          placeholder="Your name"
-        >
-
-        <label for="email">
-          Email address
-        </label>
-
-        <input
-          id="email"
-          type="email"
-          required
-          autocomplete="email"
-          placeholder="you@example.com"
-        >
-
-        <button
-          class="btn btn-lime"
-          type="submit"
-        >
-          Continue →
-        </button>
-
-      </form>
-
-      <!-- Form Status -->
-      <p
-        class="form-status"
-        id="formStatus"
-        role="status"
-      ></p>
-
-      <small>
-        Demo form only — no account or backend
-        is connected.
-      </small>
-
-    </div>
-
-  </div>
-
-  <!-- =========================================
-       16. MAIN JAVASCRIPT
-       Handles navigation, scroll reveal,
-       watchlist, scenarios and AUD converter.
-  ========================================== -->
-  <script src="script.js"></script>
+  <script src="./script.js" defer></script>
 
 </body>
 </html>
